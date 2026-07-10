@@ -4,7 +4,7 @@ import uuid
 class BaseModel(models.Model):
     id = models.UUIDField(
         primary_key=True,
-        db_default=uuid.uuid4,
+        db_default=uuid.uuid4(),
         editable=False
     )
     created_at = models.DateTimeField(

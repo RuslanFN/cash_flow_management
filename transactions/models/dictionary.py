@@ -1,7 +1,7 @@
 from django.db import models
 from .Base import BaseModel
 
-class BasiDict(models.Model):
+class BaseDict(models.Model):
     title = models.CharField(
         max_length=20,
         unique=True,
@@ -13,22 +13,22 @@ class BasiDict(models.Model):
     def __str__(self):
         return self.title
 
-class Status(BasiDict):
+class Status(BaseDict):
     class Meta:
         verbose_name = 'Статус'
         verbose_name_plural = 'Статусы' 
 
-class TypeTransaction(BasiDict):   
+class TypeTransaction(BaseDict):   
     class Meta:
         verbose_name = 'Тип транзакции'
         verbose_name_plural = 'Типы транзакций' 
 
-class Category(BasiDict):
+class Category(BaseDict):
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
     
-class SubCategory(BasiDict):
+class SubCategory(BaseDict):
     category = models.ForeignKey(
         Category, 
         on_delete=models.CASCADE,
