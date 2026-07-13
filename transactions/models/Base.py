@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 import uuid
 # BaseModel
 class BaseModel(models.Model):
@@ -8,7 +9,7 @@ class BaseModel(models.Model):
         editable=False
     )
     created_at = models.DateTimeField(
-        auto_now_add=True, 
+        default=timezone.now, 
         verbose_name='Дата создания')
     updated_at = models.DateTimeField(
         auto_now=True, 

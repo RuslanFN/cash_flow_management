@@ -1,6 +1,12 @@
 {% extends "transactions/base.html" %}
-
+{% load bootstrap5 %}
 {% block content %}
+    <form method="post" class="row row-cols-lg-auto g-3 align-items-center">
+        {% csrf_token %}
+        {% bootstrap_form form  size='sm' %}
+        <button type="submit" class="btn btn-primary">Фильтровать</button>
+    </form>
+
     <table class="table">
         <thead>
             <tr>
@@ -20,7 +26,7 @@
                     <th scope="row">1</th>
                     <td>{{ transaction.created_at }}</td>
                     <td>{{ transaction.status.title }}</td>
-                    <td>{{ transaction.type_transactions.title }}</td>
+                    <td>{{ transaction.type_transaction.title }}</td>
                     <td>{{ transaction.category.title }}</td>
                     <td>{{ transaction.sub_category.title }}</td>
                     <td>{{ transaction.amount }}</td>
@@ -28,5 +34,39 @@
                 </tr>  
             {% endfor %}
         </tbody>
-            
+{{ sub_categories|json_script:"sub_categories" }}
+<script>
+    function appendOption(sub_categories, perent){
+        perent.innerHTML = '';
+        sub_categories.forEach(sub_category => {
+            const id = sub_category[0];
+            const title = sub_category[1];
+            const option = document.createElement('option');
+            option.value = id;
+            option.textContent = title;
+            perent.appendChild(option);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        const categorySelect = document.getElementById('id_category');
+        const subCategorySelect = document.getElementById('id_sub_category');
+        if (!categorySelect || !subCategorySelect){
+            return;
+        }
+        let category_id = categorySelect.value
+        const sub_categories = JSON.parse(document.getElementById('sub_categories').textContent);
+        
+        let sub_categories_by_category = sub_categories.filter((sub_cat) => {
+            return sub_cat[2] == category_id
+        } )
+        appendOption(sub_categories_by_category, subCategorySelect);
+        categorySelect.addEventListener('change', function() {
+            category_id = this.value
+            sub_categories_by_category = sub_categories.filter((sub_cat) => {
+                return sub_cat[2] == category_id
+            })
+            appendOption(sub_categories_by_category, subCategorySelect);
+        });
+    });
+</script>     
 {% endblock %}
