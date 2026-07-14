@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: transactions
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Lnq134
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    container_name: django_app
+    restart: always
+    environment:
+      - NAME=transactions
+      - USER=postgres
+      - PASSWORD=Lnq134
+      - HOST=db  # Имя сервиса БД в сети Docker
+      - PORT=5432
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    # Автоматическое применение миграций, загрузка фикстур и старт сервера Django 6
+    command: sh -c "python manage.py migrate && python manage.py loaddata fixtures/statuses.json fixtures/types.json fixtures/categories.json fixtures/sub_categories.json fixtures/transactions_data.json && python manage.py runserver 0.0.0.0:8000"
+
+volumes:
+  postgres_data:

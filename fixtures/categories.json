@@ -1,0 +1,23 @@
+[
+{
+  "model": "transactions.category",
+  "pk": 4,
+  "fields": {
+    "title": "Продукты и супермарк"
+  }
+},
+{
+  "model": "transactions.category",
+  "pk": 5,
+  "fields": {
+    "title": "Транспорт и авто"
+  }
+},
+{
+  "model": "transactions.category",
+  "pk": 6,
+  "fields": {
+    "title": "Кафе и рестораны"
+  }
+}
+]

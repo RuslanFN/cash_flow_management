@@ -1,0 +1,30 @@
+[
+{
+  "model": "transactions.transaction",
+  "pk": "7354bf31-b334-49a4-9908-39c348cbda3d",
+  "fields": {
+    "created_at": "2026-07-12T23:43:10.626Z",
+    "updated_at": "2026-07-12T23:43:10.626Z",
+    "status": 4,
+    "type_transaction": 10,
+    "category": 5,
+    "sub_category": 6,
+    "amount": "32323.00",
+    "comment": "dvsdvadzs"
+  }
+},
+{
+  "model": "transactions.transaction",
+  "pk": "ee55494b-f86f-4594-a1ea-e6b22a12045f",
+  "fields": {
+    "created_at": "2026-07-12T22:49:51.167Z",
+    "updated_at": "2026-07-12T22:49:51.167Z",
+    "status": 1,
+    "type_transaction": 9,
+    "category": 4,
+    "sub_category": 1,
+    "amount": "222.00",
+    "comment": "иясяччсия"
+  }
+}
+]

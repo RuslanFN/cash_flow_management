@@ -20,5 +20,4 @@ from transactions.views import TransactionsView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('transactions/', TransactionsView.as_view()),
-    path('chaining/', include('smart_selects.urls')),
 ]

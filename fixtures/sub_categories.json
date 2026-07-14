@@ -1,0 +1,82 @@
+[
+{
+  "model": "transactions.subcategory",
+  "pk": 1,
+  "fields": {
+    "title": "Доставка еды",
+    "category": 4
+  }
+},
+{
+  "model": "transactions.subcategory",
+  "pk": 2,
+  "fields": {
+    "title": "Продукты у дома",
+    "category": 4
+  }
+},
+{
+  "model": "transactions.subcategory",
+  "pk": 3,
+  "fields": {
+    "title": "Алкоголь / Сигареты",
+    "category": 4
+  }
+},
+{
+  "model": "transactions.subcategory",
+  "pk": 4,
+  "fields": {
+    "title": "Общественный транспо",
+    "category": 5
+  }
+},
+{
+  "model": "transactions.subcategory",
+  "pk": 5,
+  "fields": {
+    "title": "Такси / Каршеринг",
+    "category": 5
+  }
+},
+{
+  "model": "transactions.subcategory",
+  "pk": 6,
+  "fields": {
+    "title": "Бензин / АЗС",
+    "category": 5
+  }
+},
+{
+  "model": "transactions.subcategory",
+  "pk": 7,
+  "fields": {
+    "title": "Обслуживание и ремон",
+    "category": 5
+  }
+},
+{
+  "model": "transactions.subcategory",
+  "pk": 8,
+  "fields": {
+    "title": "Фастфуд",
+    "category": 5
+  }
+},
+{
+  "model": "transactions.subcategory",
+  "pk": 9,
+  "fields": {
+    "title": "Рестораны / Бары",
+    "category": 6
+  }
+},
+{
+  "model": "transactions.subcategory",
+  "pk": 10,
+  "fields": {
+    "title": "Кофейни",
+    "category": 6
+  }
+}
+]

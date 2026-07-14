@@ -1,0 +1,23 @@
+[
+{
+  "model": "transactions.typetransaction",
+  "pk": 9,
+  "fields": {
+    "title": "Расход"
+  }
+},
+{
+  "model": "transactions.typetransaction",
+  "pk": 10,
+  "fields": {
+    "title": "Доход"
+  }
+},
+{
+  "model": "transactions.typetransaction",
+  "pk": 11,
+  "fields": {
+    "title": "Перевод"
+  }
+}
+]
